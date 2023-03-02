@@ -1,4 +1,13 @@
-
+body{
+    background-color: rgb(159, 137, 154); 
+    background-image: ('./public/textura.jpg');
+}
+#container{
+    margin: auto;
+    margin-top: 10%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(113, 94, 8);
+}
 /* 
 
     You can write your own styles here...
