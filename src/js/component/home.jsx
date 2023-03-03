@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
+
 //include images into your bundle
-// import rigoImage from "../../img/rigo-baby.jpg";
-// import textura from "../../img/textura.jpg";
+ import rigoImage from "../../img/rigo-baby.jpg";
+//  import textura from "../../img/textura.jpg";
 
 //create your first component
 const Home = () => {
   const [task, setTask] = useState("");
   const [list, setList] = useState([]);
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
     setList([...list, task]);
     setTask("");
@@ -17,13 +18,14 @@ const Home = () => {
   console.log(task);
   console.log(list);
 
-  function handleDelete (i){
-    const deleteTask =[...list]
-    deleteTask.splice(i,1)
-    setList(deleteTask)
+  function handleDelete(i) {
+    const deleteTask = [...list];
+    deleteTask.splice(i, 1);
+    setList(deleteTask);
   }
 
   return (
+    <div src={rigoImage}>
     <div id="container" className="card col-8 p-3 ">
       <div className="card-body ">
         <h5 id="title" className="card-title text-center text-white fs-1">
@@ -37,7 +39,7 @@ const Home = () => {
               onChange={(e) => setTask(e.target.value)}
               value={task}
             />
-            <hr/>
+            <hr />
           </form>
         </div>
         <ul className="list-group active">
@@ -45,7 +47,8 @@ const Home = () => {
             list.map((task, i) => {
               return (
                 <li
-                  id="task" className="list-group-item d-flex justify-content-between"
+                  id="task"
+                  className="list-group-item d-flex justify-content-between"
                   key={i}
                 >
                   {task}
@@ -66,11 +69,12 @@ const Home = () => {
           )}
           <li className="list-group-item align-items-start">
             <span className="badge bg-secondary rounded-pill">
-              {list.length} items left
+              {list.length} item{list.length >= 2 ? "s" : ""} left
             </span>
           </li>
         </ul>
       </div>
+    </div>
     </div>
   );
 };

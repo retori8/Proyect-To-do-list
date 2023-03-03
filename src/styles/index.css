@@ -1,12 +1,18 @@
 body{
-    background-color: rgb(159, 137, 154); 
-    background-image: ('./public/textura.jpg');
+     background-color: rgb(159, 137, 154); 
+    /* background-image: url('./public/textura.jpg'); */
 }
 #container{
     margin: auto;
     margin-top: 10%;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(113, 94, 8);
+}
+#buttonDelete{
+    display: none;
+}
+#task:hover #buttonDelete{
+    display:inline-flex
 }
 /* 
 
