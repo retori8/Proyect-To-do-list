@@ -1,12 +1,13 @@
 body{
-     background-color: rgb(159, 137, 154); 
-    /* background-image: url('./public/textura.jpg'); */
+     /* background-color: rgb(159, 137, 154);  */
+    background-image: url('https://3000-retori8-proyecttodolist-0is7r6lxw4z.ws-us89.gitpod.io/textura.jpg'); 
+    background-size: cover;
 }
 #container{
     margin: auto;
     margin-top: 10%;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgb(113, 94, 8);
+    background-color: rgb(150, 124, 11);
 }
 #buttonDelete{
     display: none;
