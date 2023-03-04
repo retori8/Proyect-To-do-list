@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fira+Code:wght@600&family=Roboto+Mono:wght@500&display=swap');
+
+
 body{
-     /* background-color: rgb(159, 137, 154);  */
     background-image: url('https://3000-retori8-proyecttodolist-0is7r6lxw4z.ws-us89.gitpod.io/textura.jpg'); 
     background-size: cover;
 }
+/* #title{
+    font-family: 'Abril Fatface', cursive;
+    font-size: large;
+} */
 #container{
     margin: auto;
     margin-top: 10%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Fira Code';
+    font-size: medium;
     background-color: rgb(150, 124, 11);
 }
 #buttonDelete{

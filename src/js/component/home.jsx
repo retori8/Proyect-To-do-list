@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import ElementsList from "./Elementslist.jsx";
+import Input from "./input.jsx";
+import ListCounter from "./listcounter.jsx";
+import ListDefault from "./listdefault.jsx";
+import List from "./list.jsx";
+import Card from "./card.jsx";
 
-
-//include images into your bundle
- import rigoImage from "../../img/rigo-baby.jpg";
-//  import textura from "../../img/textura.jpg";
-
-//create your first component
 const Home = () => {
   const [task, setTask] = useState("");
   const [list, setList] = useState([]);
@@ -25,57 +25,19 @@ const Home = () => {
   }
 
   return (
-    <div src={rigoImage}>
-    <div id="container" className="card col-8 p-3 ">
-      <div className="card-body ">
-        <h5 id="title" className="card-title text-center text-white fs-1">
-          TO DO LIST
-        </h5>
-        <div className="form-floating">
-          <form onSubmit={handleSubmit}>
-            <input
-              className="form-control"
-              type="text"
-              onChange={(e) => setTask(e.target.value)}
-              value={task}
-            />
-            <hr />
-          </form>
-        </div>
-        <ul className="list-group active">
-          {list.length > 0 ? (
-            list.map((task, i) => {
-              return (
-                <li
-                  id="task"
-                  className="list-group-item d-flex justify-content-between"
-                  key={i}
-                >
-                  {task}
-                  <button
-                    id="buttonDelete"
-                    type="button"
-                    className="btn-close btn-close-focus-shadow"
-                    aria-label="Close"
-                    onClick={handleDelete}
-                  ></button>
-                </li>
-              );
-            })
-          ) : (
-            <li className="list-group-item d-flex justify-content-between">
-              "No tasks, add a task"
-            </li>
-          )}
-          <li className="list-group-item align-items-start">
-            <span className="badge bg-secondary rounded-pill">
-              {list.length} item{list.length >= 2 ? "s" : ""} left
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    </div>
+    <Card>
+      <Input handleSubmit={handleSubmit} task={task} setTask={setTask}/>
+      <List>
+        {list.length > 0 ? (
+          list.map((task, i) => {
+            return <ElementsList handleDelete={handleDelete} task={task} i={i}/>;
+          })
+        ) : (
+          <ListDefault />
+        )}
+        <ListCounter list={list} />
+      </List>
+    </Card>
   );
 };
 
